@@ -15,7 +15,7 @@ class tut1(scrapy.Spider):
             date = response.xpath("//tbody[@id='circular-result']//td[2]/text()").getall()
             print("*********",type(links))
             with open(R'C:\Users\akash\OneDrive\Desktop\scrapy_tut\new_file.csv', 'w',newline='', encoding='utf-8') as myfile:
-                spamwriter = csv.writer(myfile, delimiter=' ', quotechar=',')
+                spamwriter = csv.writer(myfile, delimiter=',', quotechar=',')
                 spamwriter.writerow(['DOC_name', 'DOC_URL', 'Date'])
 
                 for (text,link,date_1) in zip(texts,links,date):
